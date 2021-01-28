@@ -15,16 +15,19 @@ class RedisClient {
   isAlive() {
     return this.client.connected;
   }
+
   // getter function
   async get(key) {
     const value = await this.getAsync(key);
     return value;
   }
-  // setter function 
+
+  // setter function
   async set(key, value, duration) {
     this.client.set(key, value);
     this.client.expire(key, duration);
   }
+
   // delete function
   async del(key) {
     this.client.del(key);
