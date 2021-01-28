@@ -22,10 +22,12 @@ class DBClient {
     if (this.db) return true;
     return false;
   }
+
   // documents in the collection users
   async nbUsers() {
     return this.db.collection('users').countDocuments();
   }
+
   // documents in the collection files
   async nbFiles() {
     return this.db.collection('files').countDocuments();
